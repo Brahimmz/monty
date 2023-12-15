@@ -41,37 +41,40 @@ typedef struct instruction_s
 
 typedef void (*op_func)(stack_t **, unsigned int);
 
-/*main.c*/
-int main(int argc, char* argv[]);
-void read_file(FILE* file);
-int tokenizer(char* line, int type, int count);
-int func_search(char* opcode, char* value, int count, int type);
+/*readfile.c*/
+void read_fl(FILE* file);
+
+/*tokenizer.c*/
+int tokeniz(char* line, int type, int count);
+
+/*funcsch.c*/
+int func_sch(char* opcode, char* value, int count, int type);
 void magic(op_func funky, char* opcode, char* value, int type, int line_n);
 
 /*lsfunc.c*/
 stack_t* create_new_node(int value, int sign);
-void free_node(void);
+void free_nd(void);
 void add_queue(stack_t** hamood, __attribute__((unused))unsigned  int line_n);
 
-/*opfunk1*/
+/*funcone.c*/
 void push(stack_t **new_node, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 
-/*opfunk2*/
+/*functwo.c*/
 void add(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
 void divi(stack_t **stack, unsigned int line_number);
-void muli(stack_t **stack, unsigned int line_number);
+void mult(stack_t **stack, unsigned int line_number);
 
-/*opfunk3*/
-void modus(stack_t **stack, unsigned int line_number);
-void pchar(stack_t **stack, unsigned int line_number);
-void pstr(stack_t **stack, unsigned int line_number);
-void rotl(stack_t **stack, unsigned int line_number);
-void rotr(stack_t **stack, unsigned int line_number);
+/*functr.c*/
+void modur(stack_t **stack, unsigned int line_number);
+void dchar(stack_t **stack, unsigned int line_number);
+void dstr(stack_t **stack, unsigned int line_number);
+void rot0(stack_t **stack, unsigned int line_number);
+void rotd(stack_t **stack, unsigned int line_number);
 
 #endif /*MONTY_H*/
